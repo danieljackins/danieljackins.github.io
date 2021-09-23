@@ -1,20 +1,138 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-<script>
-  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;analytics._writeKey='r8t1MfCfcOS7ugzaC3E5m0MgeKxMZsSS';t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.13.2";
-  analytics.load("r8t1MfCfcOS7ugzaC3E5m0MgeKxMZsSS");
-  analytics.page();
-  }}();
-</script>
-</head> 
-  <div id="foo">
-    <a id="free-trial-link" href="bar">TrackLink Test</a>
-  </div>
-  <div id="foo2">
-    <div>
-      <a id="free-trial-link2" href="foobar">TrackLink Test2</a>
-    </div>
-  </div>
-</body> 
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Test Segment<span id="selection-marker-1"
+			class="redactor-selection-marker"></span>
+		</title>
+		<script>
+			!(function () {
+				var analytics = (window.analytics = window.analytics || []);
+				if (!analytics.initialize)
+					if (analytics.invoked)
+						window.console &&
+							console.error &&
+							console.error('Segment snippet included twice.');
+					else {
+						analytics.invoked = !0;
+						analytics.methods = [
+							'trackSubmit',
+							'trackClick',
+							'trackLink',
+							'trackForm',
+							'pageview',
+							'identify',
+							'reset',
+							'group',
+							'track',
+							'ready',
+							'alias',
+							'debug',
+							'page',
+							'once',
+							'off',
+							'on',
+							'addSourceMiddleware',
+							'addIntegrationMiddleware',
+							'setAnonymousId',
+							'addDestinationMiddleware',
+						];
+						analytics.factory = function (e) {
+							return function () {
+								var t = Array.prototype.slice.call(arguments);
+								t.unshift(e);
+								analytics.push(t);
+								return analytics;
+							};
+						};
+						for (var e = 0; e < analytics.methods.length; e++) {
+							var key = analytics.methods[e];
+							analytics[key] = analytics.factory(key);
+						}
+						analytics.load = function (key, e) {
+							var t = document.createElement('script');
+							t.type = 'text/javascript';
+							t.async = !0;
+							t.src =
+								'https://cdn.segment.com/analytics.js/v1/' +
+								key +
+								'/analytics.min.js';
+							var n = document.getElementsByTagName('script')[0];
+							n.parentNode.insertBefore(t, n);
+							analytics._loadOptions = e;
+						};
+						analytics._writeKey = 'QkkO81KLVg9Uni9Up7V0kqfi2lL6UjDN';
+						analytics.SNIPPET_VERSION = '4.13.2';
+
+						analytics.load('QkkO81KLVg9Uni9Up7V0kqfi2lL6UjDN');
+						// analytics.load('FCP9sNOn6sv5EMbkpUQrh6lhbB92gigN', {
+						// 	integrations: {
+						// 		'Segment.io': {
+						// 			deliveryStrategy: {
+						// 				strategy: 'batching',
+						// 				config: {
+						// 					size: 10,
+						// 					timeout: 5000,
+						// 				},
+						// 			},
+						// 		},
+						// 	},
+						// });
+
+						analytics.page();
+					}
+			})();
+		</script>
+	</head>
+	<body>
+		<h1>Test here</h1>
+		<img src="https://api.segment.io/v1/pixel/track?data=eyJ3cml0ZUtleSI6ICJZT1VSX1dSSVRFX0tFWSIsICJ1c2VySWQiOiAiMDI1cGlrYWNodTAyNSIsICJldmVudCI6ICJFbWFpbCBPcGVuZWQiLCAicHJvcGVydGllcyI6IHsgICAic3ViamVjdCI6ICJUaGUgRWxlY3RyaWMgRGFpbHkiLCAgICJlbWFpbCI6ICJwZWVrQXRNZUBlbWFpbC5wb2tlIiB9fQ">
+		<p>test</p>
+		<form name="travel" onsubmit="identify(event)">
+			What is your favorite travel destination?
+			<input name="destination" required="" size="81" type="text" />
+			<br /><br /><br />
+			Any recommendations (cool things to do, places to visit or restaurants to
+			eat)?
+			<br /><br />
+			<textarea cols="81" name="details" required="" rows="10"> </textarea>
+			<br /><br />
+			Name: <input name="fullname" required="" size="75" type="text" />
+			<br /><br />
+			Email: <input name="email" required="" size="75" type="email" />
+			<br /><br />
+			<input name="submit" type="submit" value="submit" />
+		</form>
+
+		<!--Placeholder for identify and track script -->
+		<script type="text/javascript">
+			// var SMW_test = function ({ payload, next, integrations }) {
+			// 	console.log('analytics obj', analytics);
+			// 	next(payload);
+			// };
+			// analytics.addSourceMiddleware(SMW_test);
+			// function identify(e) {
+			// 	e.preventDefault();
+			// 	var form = e.target;
+			// 	var email = form['email'].value;
+			// 	var fullname = form['fullname'].value;
+			// 	var destination = form['destination'].value;
+			// 	var details = form['details'].value;
+			// 	var user = {
+			// 		email: email,
+			// 		name: fullname,
+			// 		destination: destination,
+			// 		details: details,
+			// 		apple: 'apples are great!',
+			// 	};
+			// 	analytics.identify('1234', {
+			// 		email: email,
+			// 		name: fullname,
+			// 	});
+			// 	analytics.track('destination submitted', user, function () {
+			// 		window.location.href = '';
+			// 	});
+			// }
+		</script>
+	</body>
 </html>
