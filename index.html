@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>
-			Test Segment<span id="selection-marker-1"
-			class="redactor-selection-marker"></span>
-		</title>
-		<script type="text/javascript">
-		!function(){var e=window.rudderanalytics=window.rudderanalytics||[];e.methods=["load","page","track","identify","alias","group","ready","reset","getAnonymousId","setAnonymousId","getUserId","getUserTraits","getGroupId","getGroupTraits","startSession","endSession"],e.factory=function(t){return function(){e.push([t].concat(Array.prototype.slice.call(arguments)))}};for(var t=0;t<e.methods.length;t++){var r=e.methods[t];e[r]=e.factory(r)}e.loadJS=function(e,t){var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.rudderlabs.com/v1.1/rudder-analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a)},e.loadJS(),
-		e.load("2QcZNI00zjXwX3ajb4M5YjzGfRd","https://onlcooljoux.dataplane.rudderstack.com"),
-		e.page()}();
-		</script>
-	</body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Window Property Test</title>
+</head>
+<body>
+
+  <script>
+    // Set the "_" property in the Window object
+    window._ = "Hello, World!";
+
+    // Check if anything tries to overwrite it
+    Object.defineProperty(window, '_', {
+      set: function(value) {
+        throw new Error("Attempt to overwrite the '_' property");
+      },
+      get: function() {
+        return window._;
+      },
+      configurable: true
+    });
+  </script>
+
+  <!-- Your other HTML content goes here -->
+
+</body>
 </html>
