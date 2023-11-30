@@ -12,12 +12,9 @@
 </script>
 </head>
 <body>
-
   <script>
-    // Set the "_" property in the Window object
     window._ = "Hello, World!";
 
-    // Check if anything tries to overwrite it
     Object.defineProperty(window, '_', {
       set: function(value) {
         throw new Error("Attempt to overwrite the '_' property");
@@ -25,8 +22,5 @@
       configurable: true
     });
   </script>
-
-  <!-- Your other HTML content goes here -->
-
 </body>
 </html>
